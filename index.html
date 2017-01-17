@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html ng-app="lmApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+
+		<title>首页</title>
+		<style type="text/css">
+			body {
+				background: #f9f9f9;
+			}
+			
+			.weui-cells__title {
+				color: #444!important;
+			}
+			
+			.weui-msg {
+				position: relative;
+				background: #ff732a;
+				padding: 0;
+				color: #fff;
+			}
+			
+			.weui-msg .ab_p {
+				position: absolute;
+				left: 0.5rem;
+				top: 1rem;
+				font-size: 0.6rem;
+				color: #fff;
+			}
+			
+			.weui-msg .weui-icon_msg {
+				font-size: 0.5rem
+			}
+			
+			.weui-msg .weui-icon_msg img {
+				width: 4rem;
+				border-radius: 50%;
+			}
+			
+			.weui-msg .weui-icon_msg p {
+				font-size: 0.8rem;
+				font-style: normal;
+			}
+			
+			.weui-msg .weui-msg__icon-area p.information {
+				font-size: 0.65rem;
+			}
+			
+			.weui-msg .weui-msg__icon-area p.information span {
+				display: inline-block;
+				margin-left: 1rem;
+				margin-bottom: 1rem;
+			}
+			
+			.weui-msg__text-area .weui-flex__item .placeholder p {
+				font-size: 0.55rem;
+			}
+			
+			.weui-msg__text-area .weui-flex__item .placeholder p span {
+				font-size: 1.05rem;
+			}
+			
+			.line {
+				width: 90%;
+				height: 0.05rem;
+				margin: 0 auto;
+				background: #fff;
+			}
+			
+			table {
+				background: #fff;
+				margin-bottom: 1rem;
+				border-top: 1px solid #e2e2e2;
+			}
+			
+			table td {
+				padding: 0.3rem 0.5rem;
+				white-space: nowrap;
+				text-align: center;
+				font-size: 0.65rem;
+				border-bottom: 1px solid #e2e2e2;
+			}
+			
+			.tablebox::-webkit-scrollbar {
+				width: 0;
+				height: 0
+			}
+			
+			#homeTag .img_on {
+				display: inline-block!important;
+			}
+			
+			#homeTag .img_off {
+				display: none;
+			}
+			#homeTag p{
+				color: #FF732A;
+			}
+		</style>
+
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<!--引入echarts文件-->
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.8.3.js"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="controller/mainController.js"></script>
+
+	</head>
+
+	<body ng-controller="lmCtrl" ontouchstart>
+
+		<div class="weui-msg">
+			<p class="ab_p">专属地区客户经理</p>
+			<div class="weui-msg__icon-area">
+				<i class="weui-icon_msg">
+					<img src="img/home_touxiang.png"/>
+					<p>王二小</p>
+				</i>
+				<p class="information">TEL：12345678910</p>
+				<p class="information">
+					<span>Q   Q：1234567</span>
+					<span>微信：12345678910</span>
+				</p>
+				<div class="line"></div>
+			</div>
+			<div class="weui-msg__text-area" style="color: #fff;padding-bottom: 1.5rem;margin-bottom: 0;">
+				<div class="weui-flex">
+					<div class="weui-flex__item">
+						<div class="placeholder">
+							<p><span>5.00</span></p>
+							<p>昨日收益(元)</p>
+						</div>
+					</div>
+					<div class="weui-flex__item item_border" style="box-sizing: border-box;">
+						<div class="placeholder" style="box-sizing: border-box;padding: 0 3px;border-left:1px solid #fff;border-right:1px solid #fff;">
+							<div class="v_line_l"></div>
+							<p><span>600.00</p>
+							<p>本月收益(元)</p>
+							<div class="v_line_r"></div>
+						</div>
+					</div>
+					<div class="weui-flex__item item_border" style="box-sizing: border-box;">
+						<div class="placeholder" style="box-sizing: border-box;padding: 0 3px;border-right:1px solid #fff;">
+							<div class="v_line_l"></div>
+							<p><span>15</span>万</p>
+							<p>累计收益(元)</p>
+							<div class="v_line_r"></div>
+						</div>
+					</div>
+					<div class="weui-flex__item">
+						<div class="placeholder">
+							<p><span>0.00</span></p>
+							<p>账户余额(元)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--echart图表，收益走势图-->
+		<div class="weui-cell" id="ecbox2" style="width: device-width;height: 300px;">
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('ecbox2'));
+				// 指定图表的配置项和数据
+				var option = {
+					title: {
+						text: '合伙人收益数据',
+						textStyle: {
+							color: '#444',
+							fontSize: 16,
+							fontWeight: 'normal'
+						}
+					},
+					tooltip: {
+						trigger: 'axis',
+					},
+					legend: {
+						left: 'right',
+						data: ['总收益', '到达收益']
+					},
+					xAxis: {
+						data: ["11-15", "11-16", "11-17", "11-18", "11-19", "11-20", "11-21"]
+					},
+					yAxis: {
+						type: 'value',
+						splitLine: {
+							show: false
+						}
+					},
+					dataZoom: [{
+						type: 'inside',
+						start: 0,
+						end: 100
+					}, {}],
+					series: [{
+						name: '总收益',
+						type: 'line',
+						data: [0, 0.4, 0.2, 0.4, 0.6, 1],
+						symbol: 'circle',
+						symbolSize: 10,
+						itemStyle: {
+							normal: {
+								color: '#ff732a',
+								lineStyle: {
+									color: '#ff732a'
+								}
+							}
+						},
+						//						areaStyle: {
+						//							normal: {
+						//								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+						//									offset: 0,
+						//									color: '#24df5d'
+						//								}, {
+						//									offset: 1,
+						//									color: '#fff'
+						//								}])
+						//							}
+						//						},
+					}, {
+						name: '到达收益',
+						type: 'line',
+						data: [0, 0.2, 0.8, 0.2, 0.8, 0.2],
+						symbol: 'circle',
+						symbolSize: 10,
+						itemStyle: {
+							normal: {
+								color: '#fbb16b',
+								lineStyle: {
+									color: '#fbb16b'
+								}
+							}
+						},
+						//						areaStyle: {
+						//							normal: {
+						//								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+						//									offset: 0,
+						//									color: '#fbb16b'
+						//								}, {
+						//									offset: 1,
+						//									color: '#fff'
+						//								}])
+						//							}
+						//						},
+					}]
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			</script>
+
+		</div>
+		<!--明细数据-->
+		<div class="weui-cells__title">明细数据</div>
+		<div class="tablebox" style="width: 100%;overflow: auto;">
+
+			<table>
+
+				<tr>
+					<td>日期</td>
+					<td>总收益</td>
+					<td>安装收益</td>
+					<td>到达收益</td>
+					<td>淘宝收益</td>
+					<td>游戏收益</td>
+				</tr>
+				<tr>
+					<td>2016-11-21</td>
+					<td>6000.00</td>
+					<td>2000.00</td>
+					<td>3000.00</td>
+					<td>1000.00</td>
+					<td>1000.00</td>
+				</tr>
+				<tr>
+					<td>2016-11-21</td>
+					<td>6000.00</td>
+					<td>2000.00</td>
+					<td>3000.00</td>
+					<td>1000.00</td>
+					<td>1000.00</td>
+				</tr>
+			</table>
+
+		</div>
+		</div>
+
+		<div ng-include="urlfooter"></div>
+
+	</body>
+
+</html>

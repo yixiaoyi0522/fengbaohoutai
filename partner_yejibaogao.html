@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html ng-app=lmApp>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>业绩报告</title>
+		<style>
+			.weui-cells__title {
+				color: #444!important;
+			}
+			
+			table {
+				margin-bottom: 1rem;
+				border-top: 1px solid #e2e2e2;
+				background: #fff;
+			}
+			
+			table td {
+				padding: 0.3rem 0.5rem;
+				white-space: nowrap;
+				text-align: center;
+				font-size: 0.65rem;
+				border-bottom: 1px solid #e2e2e2;
+			}
+			
+			.right_bor {
+				border-right: 1px solid #e2e2e2;
+			}
+			
+			.tablebox::-webkit-scrollbar {
+				width: 0;
+				height: 0
+			}
+			#yejiTag .img_on{
+				display: inline-block!important;
+			}
+			#yejiTag .img_off{
+				display: none;
+			}
+			#yejiTag p{
+				color: #FF732A;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/mainController.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body ng-controller="lmCtrl" style="background: #f9f9f9;">
+
+		<!--选项卡-->
+		<div class="weui-tab">
+			<div class="weui-navbar">
+				<div id="all" class="weui-navbar__item weui-bar__item_on">
+					全部
+				</div>
+				<div id="seven" class="weui-navbar__item">
+					近7天
+				</div>
+				<div id="thirty" class="weui-navbar__item">
+					近30天
+				</div>
+				<div id="sixty" class="weui-navbar__item">
+					近60天
+				</div>
+			</div>
+			<div class="weui-tab__panel">
+
+			</div>
+		</div>
+
+		<!--收益类型-->
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label for="" class="weui-label">日期</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="date" value="" />
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label for="" class="weui-label">至</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="date" value="" />
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_select">
+				<div class="weui-cell__bd">
+					<select class="weui-select" name="select1">
+						<option selected="" value="1">收益类型</option>
+						<option value="2">收益1</option>
+						<option value="3">收益2</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="weui-btn-area" style="margin: 10px 15px;">
+			<a class="weui-btn weui-btn_primary" style="background: #FF732A;" href="javascript:" id="showTooltips">确定</a>
+		</div>
+
+		<!--echart图表，收益走势图-->
+		<div class="weui-cell" id="ecbox2" style="width: device-width;height: 300px;">
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('ecbox2'));
+				// 指定图表的配置项和数据
+				var option = {
+					title: {
+						text: '业绩图表',
+						textStyle: {
+							color: '#444',
+							fontSize: 16,
+							fontWeight: 'normal'
+						}
+					},
+					tooltip: {
+						trigger: 'axis',
+					},
+					legend: {
+						left: 'right',
+						data: ['总收益']
+					},
+					xAxis: {
+						data: ["11-15", "11-16", "11-17", "11-18", "11-19", "11-20", "11-21"]
+					},
+					yAxis: {
+						type: 'value',
+						splitLine: {
+							show: false
+						}
+					},
+					dataZoom: [{
+						type: 'inside',
+						start: 0,
+						end: 100
+					}, {}],
+					series: [{
+						name: '总收益',
+						type: 'line',
+						data: [0, 0.4, 0.2, 0.4, 0.6, 1],
+						symbol: 'circle',
+						symbolSize: 10,
+						itemStyle: {
+							normal: {
+								color: '#ff732a',
+								lineStyle: {
+									color: '#ff732a'
+								}
+							}
+						},
+						areaStyle: {
+							normal: {
+								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+									offset: 0,
+									color: '#ff732a'
+								}, {
+									offset: 1,
+									color: '#fff'
+								}])
+							}
+						},
+					}]
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			</script>
+
+		</div>
+
+		<div class="weui-cells__title">今日业绩概况</div>
+		<div class="tablebox" style="width: 100%;overflow: auto;">
+			<table>
+				<tr>
+					<td class="right_bor">套餐</td>
+					<td>装机</td>
+					<td>到达</td>
+					<td class="right_bor">分成</td>
+					<td>合伙人收益</td>
+
+				</tr>
+				<tr>
+					<td class="right_bor" rowspan="2">风暴通用套餐</td>
+					<td>180台</td>
+					<td>85台</td>
+					<td class="right_bor">15笔</td>
+					<td rowspan="2">620元</td>
+
+				</tr>
+				<tr>
+					<td>180台</td>
+					<td>85台</td>
+					<td class="right_bor">150元</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="weui-cells__title">本月业绩概况</div>
+		<div class="tablebox" style="width: 100%;overflow: auto;">
+
+			<table>
+
+				<tr>
+					<td class="right_bor">套餐</td>
+					<td>装机</td>
+					<td>到达</td>
+					<td class="right_bor">分成</td>
+					<td>合伙人收益</td>
+
+				</tr>
+				<tr>
+					<td class="right_bor" rowspan="2">风暴通用套餐</td>
+					<td>180台</td>
+					<td>85台</td>
+					<td class="right_bor">15笔</td>
+					<td rowspan="2">620元</td>
+
+				</tr>
+				<tr>
+					<td>180台</td>
+					<td>85台</td>
+					<td class="right_bor">150元</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<div class="weui-cells__title">业绩明细</div>
+		<div class="tablebox" style="width: 100%;overflow: auto;">
+			<table>
+				<tr>
+					<td>日期</td>
+					<td>总收益</td>
+					<td>合伙人收益</td>
+					<td>装机量</td>
+					<td>装机收益</td>
+					<td>到达量</td>
+					<td>到达收益</td>
+					<td>分成订单</td>
+					<td>分成收益</td>
+				</tr>
+				<tr>
+					<td>2016-11-21</td>
+					<td>6000.00</td>
+					<td>6000.00</td>
+					<td>25</td>
+					<td>3000.00</td>
+					<td>25</td>
+					<td>25</td>
+					<td>25</td>
+					<td>25</td>
+				</tr>
+				<tr>
+					<td>2016-11-21</td>
+					<td>6000.00</td>
+					<td>6000.00</td>
+					<td>25</td>
+					<td>3000.00</td>
+					<td>25</td>
+					<td>25</td>
+					<td>25</td>
+					<td>25</td>
+				</tr>
+				<tr>
+					<td>2016-11-21</td>
+					<td>6000.00</td>
+					<td>6000.00</td>
+					<td>25</td>
+					<td>3000.00</td>
+					<td>25</td>
+					<td>25</td>
+					<td>25</td>
+					<td>25</td>
+				</tr>
+			</table>
+		</div>
+
+		<div ng-include="urlfooter"></div>
+
+	</body>
+	<script type="text/javascript">
+		$('.weui-tab .weui-navbar .weui-navbar__item ').click(function() {
+			var id = $(this).attr('id');
+			console.log(id);
+			$(this).siblings().removeClass('weui-bar__item_on');
+			$(this).addClass('weui-bar__item_on')
+		})
+
+	</script>
+
+	</html

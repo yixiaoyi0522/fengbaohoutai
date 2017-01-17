@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html ng-app="lmApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+
+		<title>分享</title>
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/share.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/weui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.8.3.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="controller/mainController.js"></script>
+	</head>
+
+	<body ng-controller="lmCtrl" style="background: url(img/share_background.jpg);background-size: 100% 100%;">
+		<div class="top">
+			<img style="width: 100%;" src="img/shareimg_top.png" />
+			<img style="width: 80%;margin-left: 10%;" src="img/shareimg_toptxt.png" alt="/">
+		</div>
+		<div class="centetr">
+			<div class="touxiang">
+				<img src="img/share_touxiang.png" />
+			</div>
+			<p class="text">您的好友“<span>张三先生</span>”邀请您</p>
+			<div class="join">
+				<img src="img/share_join.png" />
+			</div>
+			<div class="code">
+				<img src="img/code_fengbao.jpg" />
+				<p>长按二维码即刻加入</p>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="title">
+				<img src="img/share_paihangbang.png" />
+			</div>
+			<div class="contentbox">
+				<div class="content">
+					<ul>
+						<li class="box">
+							<img src="img/share_bot_tx1.JPG" />
+							<div class="sub">
+								<div class="name">
+									正***入
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip bojin">VIP4</div>
+							</div>
+							<div class="money"> ￥159325</div>
+						</li>
+
+						<li class="box">
+							<img src="img/share_bot_tx2.JPG" />
+							<div class="sub">
+								<div class="name">
+									浮***梦
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip bojin">VIP4</div>
+							</div>
+							<div class="money"> ￥15808.38</div>
+						</li>
+
+						<li class="box">
+							<img src="img/share_bot_tx3.JPG" />
+							<div class="sub">
+								<div class="name">
+									E***Boy
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip bojin">VIP4</div>
+							</div>
+							<div class="money">￥140597</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx4.JPG" />
+							<div class="sub">
+								<div class="name">
+									- ***音 。
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip gold">VIP3</div>
+							</div>
+							<div class="money"> ￥9034.51</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx5.JPG" />
+							<div class="sub">
+								<div class="name">
+									S***te
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip gold">VIP2</div>
+							</div>
+							<div class="money">￥8891.39</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx6.JPG" />
+							<div class="sub">
+								<div class="name">
+									r***in
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip gold">VIP2</div>
+							</div>
+							<div class="money">￥8432.42</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx7.JPG" />
+							<div class="sub">
+								<div class="name">
+									榆***
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip normal">VIP2</div>
+							</div>
+							<div class="money"> ￥6670.04</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx8.JPG" />
+							<div class="sub">
+								<div class="name">
+									始***见♚
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip normal">VIP2</div>
+							</div>
+							<div class="money">￥6394.42</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx9.JPG" />
+							<div class="sub">
+								<div class="name">
+									挚***缘
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip normal">VIP1</div>
+							</div>
+							<div class="money"> ￥5829.10</div>
+						</li>
+						<li class="box">
+							<img src="img/share_bot_tx10.JPG" />
+							<div class="sub">
+								<div class="name">
+									悲***喜
+									<span>(来自烟台)</span>
+								</div>
+								<div class="vip normal">VIP1</div>
+							</div>
+							<div class="money">￥3272.68</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		function autoScroll() {
+			var ul = $('ul');
+			ul.animate({
+				marginTop: "-60px"
+			}, 500, function() {
+				$(this).css({
+					marginTop: "0px"
+				}).find("li:first").appendTo(this);
+
+			})
+		}
+		$(function() {
+
+			setInterval('autoScroll(".content")', 1500)
+
+		})
+	</script>
+
+</html>

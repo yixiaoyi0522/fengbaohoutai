@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html ng-app=lmApp>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<title>风暴后台</title>
+		<style type="text/css">
+			.weui-cell__bd img {
+				width: 1rem;
+				position: relative;
+				top: 0.2rem;
+				margin-right: 0.5rem;
+			}
+			
+			#partnerTag .img_on {
+				display: inline-block!important;
+			}
+			
+			#partnerTag .img_off {
+				display: none;
+			}
+			#partnerTag p{
+				color: #FF732A;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/mainController.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ng-controller="lmCtrl" ontouchstart style="background: #f9f9f9;">
+
+		<div class="weui-cells">
+			<a href="partnerInformation.html" class="weui-cell  weui-cell_access">
+				<div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+					<img src="img/touxiang.png" style="width: 50px;display: block;border-radius: 50%;">
+				</div>
+				<div class="weui-cell__bd">
+					<p>用户名：<span>12345678910</span></p>
+					<p style="font-size: 13px;color: #888888;">当前等级：<span>VIP1</span></p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+		</div>
+		<div class="weui-cells">
+			<a class="weui-cell weui-cell_access" href="partner_xiaxianguanli.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_1.png" /> 下线管理
+					</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+			<a class="weui-cell weui-cell_access" href="development.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_2.png" /> 添加下线
+					</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+			<a class="weui-cell weui-cell_access" href="applyforbox.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_3.png" /> 我的盒子
+					</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+		</div>
+		<div class="weui-cells">
+			<a class="weui-cell weui-cell_access" href="PersonalFinancialInformation.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_5.png" /> 财务信息
+					</p>
+				</div>
+				<div class="weui-cell__ft"><span>未完善</span></div>
+			</a>
+			<a class="weui-cell weui-cell_access" href="storeInformation.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_6.png" /> 店铺信息
+					</p>
+				</div>
+				<div class="weui-cell__ft"><span>未完善</span></div>
+			</a>
+
+			<a class="weui-cell weui-cell_access" href="oldPhone.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img style="width: 0.7rem;margin-right: 0.8rem;" src="img/user_7.png" /> 修改手机号
+					</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+			<a class="weui-cell weui-cell_access" href="changePassword.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_8.png" /> 修改登录密码
+					</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+			<a class="weui-cell weui-cell_access" href="systemMessages.html">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_9.png" /> 系统消息
+					</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a>
+		</div>
+		<div class="weui-cells">
+			<a id="phone" class="weui-cell weui-cell_access" href="javascript:;">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_10.png" /> 客服电话
+					</p>
+				</div>
+				<div class="weui-cell__ft">400-9977-768</div>
+			</a>
+			<a id="QQ" class="weui-cell weui-cell_access" href="javascript:;">
+				<div class="weui-cell__bd">
+					<p>
+						<img src="img/user_11.png" /> 客服QQ
+					</p>
+				</div>
+				<div class="weui-cell__ft">800033559</div>
+			</a>
+		</div>
+		<div id="phone_dia" style="display: none;">
+			<div class="weui-mask"></div>
+			<div class="weui-dialog">
+				<div class="weui-dialog__hd"><strong class="weui-dialog__title">确认拨打电话？</strong></div>
+				<div class="weui-dialog__ft">
+					<a href="tel:400-9977-768" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+					<a href="javascript:;" onclick="$('#phone_dia').hide()" class="weui-dialog__btn weui-dialog__btn_primary">取消</a>
+				</div>
+			</div>
+		</div>
+		<div id="QQ_dia" style="display: none;">
+			<div class="weui-mask"></div>
+			<div class="weui-dialog">
+				<div class="weui-dialog__hd"><strong class="weui-dialog__title">确认链接QQ？</strong></div>
+				<div class="weui-dialog__ft">
+					<a href="mqqwpa://im/chat?chat_type=wpa&uin=800033559&version=1&src_type=web&web_src=oicqzone.com" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+					<a href="javascript:;" onclick="$('#QQ_dia').hide()" class="weui-dialog__btn weui-dialog__btn_primary">取消</a>
+				</div>
+			</div>
+		</div>
+
+		<!--按钮-->
+		<div class="weui-btn-area">
+			<a style="background: #FF732A;margin-top: 2rem;" class="weui-btn weui-btn_primary" href="login.html">退出当前账号</a>
+		</div>
+
+		<div ng-include="urlfooter"></div>
+	</body>
+
+	<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//底部导航的切换
+		$('.weui-tab .weui-tabbar a').click(function() {
+				$(this).siblings().removeClass('weui-bar__item_on').end().addClass('weui-bar__item_on');
+				$(this).siblings().children('img.img_off').show().end().children('img.img_on').hide();
+				$(this).children('img.img_off').hide().end().children('img.img_on').show();
+			})
+			//点击客服qq的效果
+		$('#QQ').click(function() {
+			$('#QQ_dia').show();
+			$('.weui-mask').click(function() {
+				$('#QQ_dia').hide();
+			})
+		});
+		//点击客服电话
+		$('#phone').click(function() {
+			$('#phone_dia').show();
+			$('.weui-mask').click(function() {
+				$('#phone_dia').hide();
+			})
+		})
+	</script>
+
+</html>

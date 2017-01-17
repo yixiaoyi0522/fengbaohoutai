@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app=lmApp>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<title>店铺信息</title>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/mainController.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ng-controller="lmCtrl" ontouchstart style="background: #f9f9f9;">
+
+		<!--完善信息-->
+		<div class="weui-cells__title" style="padding: 0 0.5rem">请完善您的店铺信息，便于风暴与您及时沟通</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+					<p>认证状态</p>
+				</div>
+				<div class="weui-cell__ft" style="color: #09bb07;">已认证</div>
+			</div>
+		</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">店铺名</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="number"  placeholder="请输入店铺名"/>
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">营业执照</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="number" placeholder="请输入营业执照号" />
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">开户地</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="number" />
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">详细地址</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="number" placeholder="请输入您的地址" />
+				</div>
+			</div>
+
+		</div>
+		<!--上传店铺图片-->
+		<div class="weui-cells" style="padding: 0.5rem;">
+			<div class="weui-uploader" style="float: left;width: 50%;">
+				<div class="weui-uploader__hd">
+					<p class="weui-uploader__title">上传店铺照片</p>
+				</div>
+				<div class="weui-uploader__bd">
+					
+					<div class="weui-uploader__input-box">
+						<input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple />
+					</div>
+				</div>
+			</div>
+			<div class="weui-uploader" style="float: left;width: 50%;padding: 0 20px;box-sizing: border-box;border-left: 1px solid #dedede;">
+				<div class="weui-uploader__hd">
+					<p class="weui-uploader__title">图片示例</p>
+				</div>
+				<div class="weui-uploader__bd">
+					
+					<div style="width: 80px;height: 80px;overflow: hidden;">
+						<img src="img/picture-example.png" style="max-height: 80px;"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--确定按钮-->
+		<div class="weui-btn-area">
+			<a style="background: #FF732A;margin-top: 2rem;" class="weui-btn weui-btn_primary" href="javascript:">确定</a>
+		</div>
+
+		<!--<div ng-include="urlfooter"></div>-->
+
+
+	</body>
+
+</html>

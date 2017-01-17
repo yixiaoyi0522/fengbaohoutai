@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html ng-app=lmApp>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>下线管理</title>
+		<style>
+			.clearfix:after {
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			
+			.clearfix {
+				zoom: 1;
+			}
+			
+			.weui-cells__title {
+				color: #444!important;
+			}
+			
+			.weui-msg {
+				position: relative;
+				background: #fff;
+				padding: 0;
+				color: #ff732a;
+				border-top: 1px solid #e9e9e9;
+				border-bottom: 1px solid #e9e9e9;
+			}
+			
+			.weui-msg__text-area .weui-flex__item .placeholder p {
+				font-size: 15px;			
+				color: #444;
+			}
+			
+			.weui-msg__text-area .weui-flex__item .placeholder p.num {
+				color: #FF732A;
+			}
+			
+			.weui-msg__text-area .weui-flex__item .placeholder p.num span {
+				font-size: 1.25rem;
+			}
+			
+			.lr_border {
+				box-sizing: border-box;
+				padding: 0 3px;
+				border-left: 1px solid #dfdfdf;
+				border-right: 1px solid #dfdfdf;
+			}
+			
+			.weui-btn_primary {
+				margin-bottom: 2rem;
+			}
+			
+			table {
+				border-top: 1px solid #e2e2e2;
+				background: #fff;
+			}
+			
+			table td {
+				padding: 0.3rem 0.5rem;
+				white-space: nowrap;
+				text-align: center;
+				font-size: 0.65rem;
+				border-bottom: 1px solid #e2e2e2;
+			}
+			
+			.right_bor {
+				border-right: 1px solid #dfdfdf;
+			}
+			
+			.tablebox {
+				position: relative;
+			}
+			
+			.thead {
+				/*position: fixed;*/
+				background: #fff;
+				border-top: 1px solid #e2e2e2;
+				padding: 0.5rem;
+			}
+			
+			.thead p.uid {
+				background: #fff;
+				width: 50%;
+				float: left;
+				font-size: 0.8rem;
+			}
+			
+			.thead a.edit {
+				display: block;
+				background: #fff;
+				width: 50%;
+				float: right;
+				text-align: right;
+				box-sizing: border-box;
+				font-size: 0.7rem;
+				padding-top: 0.1rem;
+				color: #444;
+			}
+			
+			.thead a.edit img {
+				width: 0.7rem;
+			}
+			
+			.tablebox {
+				background: #fff;
+				border-top: 1px solid #e2e2e2;
+				margin-bottom: 1rem;
+			}
+			
+			.tablebox::-webkit-scrollbar {
+				width: 0;
+				height: 0
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/mainController.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body ng-controller="lmCtrl" style="background: #f9f9f9;">
+		<div class="weui-cells__title">下线概况</div>
+		<div class="weui-msg">
+
+			<div class="weui-msg__text-area" style="color: #fff;padding-bottom: 1.5rem;margin-bottom: 0;">
+				<div class="weui-flex">
+					<div class="weui-flex__item">
+						<div class="placeholder">
+							<p class="num"><span>185</span>个</p>
+							<p>下线总量</p>
+						</div>
+					</div>
+					<div class="weui-flex__item item_border">
+						<div class="placeholder lr_border">
+							<p class="num"><span>72</span>个</p>
+							<p>本月新增</p>
+						</div>
+					</div>
+					<div class="weui-flex__item">
+						<div class="placeholder">
+							<p class="num"><span>15</span>个</p>
+							<p>本日新增</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--下线明细-->
+		<div class="weui-cells__title">下线明细</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label for="" class="weui-label">日期</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="date" value="" />
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label for="" class="weui-label">至</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="date" value="" />
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">用户</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" placeholder="请输入UID或账号或手机号">
+				</div>
+			</div>
+		</div>
+		<div class="weui-btn-area" style="margin: 10px 15px;">
+			<a class="weui-btn weui-btn_primary" style="background: #FF732A;margin-bottom: 1rem;" href="javascript:" id="showTooltips">确定</a>
+		</div>
+		<div class="thead">
+			<p class="uid">UID：57599</p>
+			<a href="partner_xiaxian_edit.html" class="edit"><img src="img/Pencil.png" alt="edit" />编辑</a>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tablebox" style="width: 100%;overflow: auto;">
+
+			<table>
+					<tr>
+						<td>注册时间</td>
+						<td>用户名</td>
+						<td>电话</td>
+						<td>QQ</td>
+						<td>微信</td>
+						<td>本月安装</td>
+						<td>本月到达</td>
+						<td>本月到达率</td>
+						<td>本月收益</td>
+						<td>是否绑定盒子</td>
+						<td>套餐价格</td>
+						<td>是否分成淘宝收益</td>
+						<td>状态</td>
+					</tr>
+					<tr>
+						<td>2016-11-21</td>
+						<td>shuhsdfd</td>
+						<td>12345678910</td>
+						<td>1234567</td>
+						<td>1234567</td>
+						<td>123</td>
+						<td>123</td>
+						<td>55%</td>
+						<td>550</td>
+						<td>是</td>
+						<td>0+5</td>
+						<td>是</td>
+						<td>正常</td>
+					</tr>
+
+			</table>
+		</div>
+		<div class="tbox">
+			<div class="thead">
+				<p class="uid">UID：57599</p>
+				<a href="partner_xiaxian_edit.html" class="edit"><img src="img/Pencil.png" alt="edit" />编辑</a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="tablebox" style="width: 100%;overflow: auto;">
+				<table>
+
+					<tr>
+						<td>注册时间</td>
+						<td>用户名</td>
+						<td>电话</td>
+						<td>QQ</td>
+						<td>微信</td>
+						<td>本月安装</td>
+						<td>本月到达</td>
+						<td>本月到达率</td>
+						<td>本月收益</td>
+						<td>是否绑定盒子</td>
+						<td>套餐价格</td>
+						<td>是否分成淘宝收益</td>
+						<td>状态</td>
+					</tr>
+					<tr>
+						<td>2016-11-21</td>
+						<td>shuhsdfd</td>
+						<td>12345678910</td>
+						<td>1234567</td>
+						<td>1234567</td>
+						<td>123</td>
+						<td>123</td>
+						<td>55%</td>
+						<td>550</td>
+						<td>是</td>
+						<td>0+5</td>
+						<td>是</td>
+						<td>正常</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+
+		<!--<div ng-include="urlfooter"></div>-->
+
+	</body>
+
+	</html

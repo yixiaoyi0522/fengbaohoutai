@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+
+		<title>登录</title>
+		
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<link rel="stylesheet" href="css/login.css" />
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ontouchstart>
+
+		<!--logo部分-->
+		<div class="logo">
+			<img src="img/logo.png" />
+			<p>欢迎登录风暴微信后台系统</p>
+		</div>
+
+		<!--登录部分-->
+		<div class="login">
+
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__hd">
+						<label class="weui-label">用户名</label>
+					</div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" placeholder="请输入用户名或手机号" />
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd">
+						<label class="weui-label">密码</label>
+					</div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="password" placeholder="请输入密码" />
+					</div>
+					
+				</div>
+			</div>
+			<div class="weui-cells__tips">
+				<p class="left"><a href="changePassword.html">忘记密码?</a></p>
+				<p class="right">没有账号？<span><a href="register.html">点击注册</a></span></p>
+				<div class="clearfix"></div>
+			</div>
+			<!--确定-->
+			<div class="weui-btn-area">
+				<a style="background: #ff732a;margin-top: 2rem;" class="weui-btn weui-btn_primary" href="index.html">确定</a>
+			</div>
+			
+			<p class="useOther"><a href="login_phone.html">使用手机号登录</a></p>
+
+		</div>
+		
+		<!--<div ng-include="urlfooter"></div>-->
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html ng-app=lmApp>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>开始赚钱</title>
+
+		<style>
+			.clearfix:after {
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			
+			.clearfix {
+				zoom: 1;
+			}
+			
+			.weui-cells__title {
+				color: #444!important;
+			}
+			
+			.box {
+				padding: 1rem 0;
+				border-top: 1px solid #e2e2e2;
+				border-bottom: 1px solid #e2e2e2;
+			}
+			/*.box .left {
+				padding: 0.5rem;
+				;
+				box-sizing: border-box;
+				float: left;
+				width: 50%;
+				white-space: nowrap;
+			}*/
+			
+			.box .right {
+				padding: 0.5rem;
+				box-sizing: border-box;
+				float: left;
+				width: 50%;
+				border-left: 1px solid #e2e2e2;
+			}
+			
+			.box img {
+				float: left;
+				width: 3rem;
+				height: auto;
+			}
+			
+			.box .txt {
+				float: left;
+				margin-left: 0.5rem;
+				padding: 0.3rem 0;
+			}
+			
+			.box .txt p {
+				font-size: 0.7rem;
+			}
+			
+			.box .txt p a {
+				font-size: 0.6rem;
+				color: #FF732A;
+			}
+			
+			.placeholder {
+				text-align: center;
+				font-size: 14px;
+			}
+			
+			.tcbox {
+				margin-bottom: 3rem;
+			}
+			
+			.Package {
+				display: none;
+				padding: 0.5rem 1rem;
+			}
+			
+			.Package .sub {
+				display: inline-block;
+				margin: 0.4rem;
+				text-align: center;
+				font-size: 0.5rem;
+			}
+			
+			.Package .sub img {
+				width: 1.75rem;
+			}
+			
+			.Package .sub p {
+				font-size: 11px;
+			}
+			
+			.detail {
+				text-align: center;
+				margin: 0 auto;
+			}
+			
+			.weui-cell>p {
+				margin: 0 auto;
+			}
+			
+			.detail {}
+			
+			.detail p {
+				/*text-align: center;*/
+				margin: 0 auto 1rem;
+			}
+			
+			.weui-flex {
+				padding: 0.5rem;
+			}
+			
+			.item_border {
+				border-right: 1px solid #E2E2E2;
+			}
+			
+			.detail .open {
+				display: none;
+			}
+			
+			#moneyTag .img_on {
+				display: inline-block!important;
+			}
+			
+			#moneyTag .img_off {
+				display: none;
+			}
+			#moneyTag p{
+				color: #FF732A;
+			}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/mainController.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body ng-controller="lmCtrl" style="background: #f9f9f9;">
+		<div class="weui-cells__title">推广方式</div>
+
+		<div class="weui-cells" style="padding: 0.5rem 0;">
+			<a class="weui-cell weui-cell_access" href="applyforbox.html">
+				<div class="weui-cell__hd"><img src="img/makemoney_hezi.png" alt="" style="width:2rem;margin-right: 0.5rem;display:block"></div>
+				<div class="weui-cell__bd weui-cell_primary">
+					<p style="font-size: 0.8rem;">风暴装机盒子</p>
+					<p style="font-size: 0.6rem;">批量手机全自动安装软件</p>
+				</div>
+				<span class="weui-cell__ft"></span>
+			</a>
+		</div>
+
+		<div class="tcbox">
+			<div class="weui-cells__title">高收益的软件套餐</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<p>通用套餐</p>
+				</div>
+				<div class="weui-cell weui-flex">
+					<div class="weui-flex__item item_border">
+						<div class="placeholder">安装价格：1 元</div>
+					</div>
+					<div class="weui-flex__item">
+						<div class="placeholder">到达价格：5 元</div>
+					</div>
+
+				</div>
+				<div class="Package">
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+				</div>
+
+				<div class="detail">
+					<p class="close">
+						<span class="close_i">∨</span> 展开查看包含产品
+					</p>
+					<p class="open">
+						<span class="open_i">∧</span> 关闭
+					</p>
+				</div>
+
+			</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<p>高端机套餐</p>
+				</div>
+				<div class="weui-cell weui-flex">
+					<div class="weui-flex__item item_border">
+						<div class="placeholder">安装价格：1 元</div>
+					</div>
+					<div class="weui-flex__item">
+						<div class="placeholder">到达价格：5 元</div>
+					</div>
+
+				</div>
+				<div class="Package">
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+				</div>
+
+				<div class="detail">
+					<p class="close">
+						<span class="close_i">∨</span> 展开查看包含产品
+					</p>
+					<p class="open">
+						<span class="open_i">∧</span> 关闭
+					</p>
+				</div>
+
+			</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<p>低端机套餐</p>
+				</div>
+				<div class="weui-cell weui-flex">
+					<div class="weui-flex__item item_border">
+						<div class="placeholder">安装价格：1 元</div>
+					</div>
+					<div class="weui-flex__item">
+						<div class="placeholder">到达价格：5 元</div>
+					</div>
+
+				</div>
+				<div class="Package">
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+					<div class="sub">
+						<img src="img/aiqiyi.png" />
+						<p>爱奇艺视频</p>
+					</div>
+				</div>
+				<div class="detail">
+					<p class="close">
+						<span class="close_i">∨</span> 展开查看包含产品
+					</p>
+					<p class="open">
+						<span class="open_i">∧</span> 关闭
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div ng-include="urlfooter"></div>
+	</body>
+
+	<script type="text/javascript">
+		var detail = $('.detail p');
+
+		for(var i = 0; i < detail.length; i++) {
+
+			detail.eq(i).click(function() {
+				$(this).parent().children('.open').toggle();
+				$(this).parent().children('.close').toggle();
+				$(this).parent().siblings('.Package').toggle();
+			})
+		}
+	</script>
+
+</html>

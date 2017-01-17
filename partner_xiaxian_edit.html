@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app=lmApp>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>下线管理</title>
+		<style type="text/css">
+			.weui-label {
+				width: 150px!important;
+			}
+			
+			.weui-cells__title {
+				color: #FF0000!important;
+			}
+			
+			.weui-cells__title img {
+				width: 1rem;
+				position: relative;
+				margin-right: 0.5rem;
+				float: left;
+			}
+			
+			.weui-cells__title p {
+				float: left;
+			}
+			
+			.addbox {
+				margin-top: 0!important;
+			}
+			
+			.clearfix:after {
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			
+			.clearfix {
+				zoom: 1;
+			}
+			/*input[type="radio"] {
+				display: none;
+			}
+			
+			input[type="radio"]{
+				padding: 0.2em 1em;
+				border: 1px solid #CCCCCC;
+				border-radius: 0.5em;
+				color: #999;
+			}
+			
+			input[type="radio"]:checked{
+				padding: 0.2em 1em;
+				border: 1px solid #FF6600;
+				border-radius: 0.5em;
+				background: #FF6600;
+				color: #FFFFFF;
+			}*/
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/mainController.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body ng-controller="lmCtrl" style="background: #f9f9f9;">
+		<div id="addsub" class="weui-cells weui-cells_form">
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">装机到达价格</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" placeholder="0 + 6" />
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">是否分成淘宝手游</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input type="radio" name="sex" checked="">分成
+					<input type="radio" name="sex">不分成
+				</div>
+			</div>
+			<!--<div class="weui-cells addbox">-->
+			<div class="weui-cell">
+				<div class="weui-cell__hd">
+					<label class="weui-label">绑定盒子串号</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" placeholder="" />
+				</div>
+			</div>
+			<!--</div>-->
+		</div>
+		<div id="add" class="weui-cells__title">
+			<img src="img/add.png" />
+			<p>增加绑定盒子串号</p>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="weui-btn-area">
+			<a class="weui-btn weui-btn_primary" style="background: #FF732A;margin-top: 3rem;" href="javascript:void(0);">保存串号</a>
+		</div>
+		<!--<div ng-include="urlfooter"></div>-->
+	</body>
+
+	<script type="text/javascript">
+		$('#add').click(function() {
+
+			var addtxt = '<div class="weui-cell">' +
+				'<div class="weui-cell__hd">' +
+				'<label class="weui-label">绑定盒子串号</label>' +
+				'</div>' +
+				'<div class="weui-cell__bd">' +
+				'<input class="weui-input" type="text" placeholder="" />' +
+				'</div>' +
+				'</div>';
+
+			$('#addsub').append(addtxt);
+
+		})
+	</script>
+
+</html>

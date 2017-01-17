@@ -1,0 +1,148 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system-font,Helvetica Neue,sans-serif
+}
+ul{
+	list-style: none;
+}
+/*上部分*/
+.top{
+	position: relative;
+}
+.top img{
+	z-index: 999;
+}
+/*中间部分*/
+.centetr{
+	position: relative;
+	top: -20px;
+	min-height: 200px;
+	z-index: 20;
+	background: url(../img/share_midbackground.png) no-repeat;
+	background-size: 100%;
+}
+.centetr .touxiang{
+	padding-top: 50px;
+	text-align: center;
+}
+.centetr .touxiang img{
+	width: 95px;
+	height: 95px;
+}
+.centetr .text{
+	margin-top: 10px;
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+} 
+.centetr .join{
+	margin-top: 20px;
+	text-align: center;
+}
+.centetr .join img{
+	width: 80%;
+}
+.centetr .code{
+	text-align: center;
+	margin-top: 20px;
+	padding-bottom: 30px;
+}
+.centetr .code img{
+	width: 30%;
+}
+.centetr .code p{
+	color: #fff;
+}
+/*底部*/
+.bottom{
+	z-index: 0;
+	min-height: 200px;
+	position: relative;
+	margin-top: -30px;
+	padding-bottom: 10px;
+}
+.bottom .title{
+	padding-top: 20px;
+	text-align: center;
+}
+.bottom .title img{
+	width: 45%;
+	z-index: 999;
+}
+.bottom .title p{
+	position: absolute;
+	top: 45px;
+	margin-left: 50%;
+	left: -40px;
+}
+.bottom .contentbox{
+	width: 90%;
+	margin: 20px auto;
+	padding: 10px;
+	border: 1px solid #ffd302;
+}
+.bottom .content{
+	/*width: 100%;*/
+	height: 380px;
+	background: #fff;
+	padding: 0 10px 5px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.bottom .box{
+	height: 40px;
+	position: relative;
+	margin: 20px 0;
+}
+.bottom .box img{
+	display: block;
+	float: left;
+	width: 45px;
+	height: 45px;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+}
+.bottom .box .sub{
+	position: relative;
+	float: left;
+	margin-left: 10px;
+}
+.bottom .box .sub .name{
+	font-size: 14px;
+}
+.bottom .box .sub .name span{
+	 font-size: 10px;
+	color: #777;
+ }
+.bottom .box .money{
+	padding-top: 10px;
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.bottom .box .bojin{
+	color: #e81631;
+}
+.bottom .box .gold{
+	 color: #e89216 ;
+ }
+.bottom .box .normal{
+	  color: #333333;
+  }
+.bottom .box .vip{
+	color: #e31919;
+	font-size: 14px;
+	padding-left: 20px;
+}
+
+
+
+
+

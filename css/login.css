@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+body{
+	background: #f9f9f9;
+}
+/*logo部分*/
+.logo {
+  height: auto;
+  text-align: center;
+  margin: 1rem 0;
+}
+.logo img{
+	width: 10rem;
+  	height: auto;
+}
+.logo p{
+	font-size: 0.65rem;
+}
+.login .weui-cells__tips{
+
+	margin-top: 10px;
+	font-size: 16px;
+}
+p.left a{
+	color: #ff0000;
+	float: left;
+}
+p.right{
+	float: right;
+}
+p.right span a{
+	color: #FF0000;
+}
+.useOther{
+	text-align: center;
+	margin-top: 1rem;
+	font-size: 18px;
+}
+.useOther a{
+	color: #444;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom: 1;
+}

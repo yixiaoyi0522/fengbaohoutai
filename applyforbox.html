@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="lmApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+		<title>申请盒子</title>
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<script src="js/jquery-1.8.3.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="controller/mainController.js"></script>
+		<script src="js/userem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ng-controller="lmCtrl" ontouchstart style="background: #f9f9f9;">
+
+		<div class="box_box">
+			<!--申请理由-->
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<textarea class="weui-textarea" placeholder="请输入申请理由(20字以上)" rows="7"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<!--确定按钮-->
+			<div class="weui-btn-area">
+				<a style="background: #FF732A;margin-top: 2rem;" class="weui-btn weui-btn_primary" href="boxshenhe.html">
+					提交申请
+				</a>
+			</div>
+
+		</div>
+		
+		<!--<div ng-include="urlfooter"></div>-->
+	</body>
+
+</html>
